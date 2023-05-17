@@ -2,11 +2,21 @@
 <html>
 <head>
     <title>Lia-Connection</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <script src="../js/index.js" defer></script>
 </head>
 <body>
     <div class="container">
+        <div class="newCompanyFormContainer">
+            <button class="closeCompanyFormBtn">X</button>
+            <form action="" class="newCompanyForm">
+                <label for="companyNameInput">Företagsnamn</label>
+                <input name="companyNameInput" type="text" class="companyNameInput" required>
+                <button class="addCompanyToListBtn">Lägg till företag</button>
+            </form>
+        </div>
         <div class="list">
+            <button class="createCompanyBtn">Skapa nytt företag</button>
             <h2>Lista</h2>
             <li>Företag</li>
             <li>Företag</li>
