@@ -1,13 +1,18 @@
-.container {
+body {
+  overflow-x: hidden;
+}
+
+.homepage-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  height: 100vh;
   padding-top: 50px;
   text-align: center;
   width: 80%;
   margin: auto;
+  height: 100vh;
+  padding-bottom: 60px;
 }
 
 .list {
@@ -180,4 +185,46 @@ h1 {
 
 .form-container {
   animation: formFadeIn 0.5s ease-in-out;
+}
+
+/* Grundläggande styling för footern  */
+
+footer {
+  margin-top: 6rem;
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  padding-bottom: 60px;
+}
+
+.contact-info,
+.legal-links,
+.about-us,
+.useful-links,
+.copyright {
+  margin-bottom: 10px;
+}
+
+.contact-info a {
+  color: #333;
+}
+
+.legal-links a {
+  color: #333;
+  margin: 0 5px;
+}
+
+.about-us {
+  font-style: italic;
+}
+
+.useful-links a {
+  color: #333;
 }
