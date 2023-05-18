@@ -7,6 +7,9 @@
 </head>
 <body>
     <div class="container">
+        <div id="loggedInMessage" style="display: none;">
+            Welcome, <span id="loggedInUsername"></span>!
+          </div>
         <div class="newCompanyFormContainer">
             <button class="closeCompanyFormBtn">X</button>
             <form action="" class="newCompanyForm">
@@ -89,7 +92,8 @@
                 matchar dina intressen och mål.
                 </p>
         </div>
-        <button class="login" onclick="window.location.href='login.html'">Logga in</button>
+        <button class="login" onclick="window.location.href='login.html'">Logga ut</button>
+        
     </div>
 </body>
 </html>
