@@ -1,184 +1,138 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+  </head>
 
-<head>
-    <style>
-        /* CSS Styling for the form */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f1f1f1;
-            padding: 20px;
-        }
+  <body class="form-body">
+    <div class="form-container">
+      <h1>Vänligen fyll i formuläret:</h1>
+      <form class="application-form">
+        <div class="form-group">
+          <label for="full-name">Fullständigt namn:</label>
+          <input type="text" id="full-name" name="full-name" required />
+        </div>
 
-        h1 {
-            text-align: center;
-            color: #333333;
-        }
+        <div class="form-group">
+          <label for="phone-number">Telefonnummer:</label>
+          <input
+            type="tel"
+            id="phone-number"
+            name="phone-number"
+            required
+            placeholder="+46"
+          />
+        </div>
 
-        .container {
-            max-width: 500px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+        <div class="form-group">
+          <label for="email">E-postadress:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
 
-        .form-group {
-            margin-bottom: 20px;
-        }
+        <div class="form-group">
+          <label for="current-education"
+            >Nuvarande utbildning och lärosäte:</label
+          >
+          <input
+            type="text"
+            id="current-education"
+            name="current-education"
+            required
+          />
+        </div>
 
-        .form-group label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
+        <div class="form-group">
+          <label for="study-program">Studieprogram/major: </label>
+          <input type="text" id="study-program" name="study-program" required />
+        </div>
 
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #cccccc;
-            border-radius: 4px;
-        }
+        <div class="form-group">
+          <label for="expected-graduation">Förväntat examensdatum: </label>
+          <input
+            type="date"
+            id="expected-graduation"
+            name="expected-graduation"
+            required
+          />
+        </div>
 
-        .form-group textarea {
-            resize: vertical;
-        }
+        <div class="form-group">
+          <label for="competences-skills">Kompetenser och färdigheter: </label>
+          <textarea
+            id="competences-skills"
+            name="competences-skills"
+            rows="4"
+            required
+          ></textarea>
+        </div>
 
-        .form-group input[type="submit"] {
-            background-color: #4caf50;
-            color: #ffffff;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+        <div class="form-group">
+          <label for="company-name"
+            >Namn på företag eller organisation där du önskar praktik:
+          </label>
+          <input type="text" id="company-name" name="company-name" required />
+        </div>
 
-        .form-group input[type="submit"]:hover {
-            background-color: #45a049;
-        }
+        <div class="form-group">
+          <label for="start-date">Tillgänglig från:</label>
+          <input type="date" id="start-date" name="start-date" required />
+        </div>
 
-        /* Responsive styles */
-        @media screen and (max-width: 600px) {
-            .container {
-                max-width: 100%;
-                padding: 10px;
-            }
-        }
+        <div class="form-group">
+          <label for="end-date">Tillgänglig till och med:</label>
+          <input type="date" id="end-date" name="end-date" required />
+        </div>
 
-        /* Animation */
-        @keyframes formFadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(50px);
-            }
+        <div class="form-group">
+          <label for="interest-reason"
+            >Motivering till varför du är intresserad av den specifika
+            praktikplatsen:
+          </label>
+          <textarea
+            id="interest-reason"
+            name="interest-reason"
+            rows="4"
+            required
+          ></textarea>
+        </div>
 
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+        <div class="form-group">
+          <label for="desired-location">Plats:</label>
+          <select id="desired-location" name="desired-location" required>
+            <option value="">Välj plats</option>
+            <option value="Stockholm">Stockholm</option>
+            <option value="Göteborg">Göteborg</option>
+            <option value="Malmö">Malmö</option>
+            <option value="Lund">Lund</option>
+          </select>
+        </div>
 
-        .container {
-            animation: formFadeIn 0.5s ease-in-out;
-        }
-    </style>
-</head>
+        <div class="form-group">
+          <div>
+            <input
+              type="radio"
+              id="pa-plats"
+              name="internship-type"
+              value="pa-plats"
+            />
+            <label for="pa-plats">På plats</label>
+          </div>
 
-<body>
-    <div class="container">
-        <h1>Vänligen fyll i formuläret:</h1>
-        <form>
-            <div class="form-group">
-                <label for="full-name">Fullständigt namn:</label>
-                <input type="text" id="full-name" name="full-name" required>
-            </div>
-
-            <div class="form-group">
-                <label for="phone-number">Telefonnummer:</label>
-                <input type="tel" id="phone-number" name="phone-number" required placeholder="+46">
-            </div>
-
-            <div class="form-group">
-                <label for="email">E-postadress:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-
-            <div class="form-group">
-                <label for="current-education">Nuvarande utbildning och lärosäte:</label>
-                <input type="text" id="current-education" name="current-education" required>
-            </div>
-
-            <div class="form-group">
-                <label for="study-program">Studieprogram/major:
-                </label>
-                <input type="text" id="study-program" name="study-program" required>
-            </div>
-
-            <div class="form-group">
-                <label for="expected-graduation">Förväntat examensdatum:
-                </label>
-                <input type="date" id="expected-graduation" name="expected-graduation" required>
-            </div>
-
-
-            <div class="form-group">
-                <label for="competences-skills">Kompetenser och färdigheter:
-                </label>
-                <textarea id="competences-skills" name="competences-skills" rows="4" required></textarea>
-            </div>
-
-            <div class="form-group">
-                <label for="company-name">Namn på företag eller organisation där du önskar praktik:
-                </label>
-                <input type="text" id="company-name" name="company-name" required>
-            </div>
+          <div>
+            <input
+              type="radio"
+              id="Distans"
+              name="internship-type"
+              value="Distans"
+            />
+            <label for="Distans">Distans</label>
+          </div>
+        </div>
 
             <div class="form-group">
-                <label for="start-date">Tillgänglig från:</label>
-                <input type="date" id="start-date" name="start-date" required>
+                <input type="submit" value="Skicka">
             </div>
-
-            <div class="form-group">
-                <label for="end-date">Tillgänglig till och med:</label>
-                <input type="date" id="end-date" name="end-date" required>
-            </div>
-
-            <div class="form-group">
-                <label for="interest-reason">Motivering till varför du är intresserad av den specifika praktikplatsen:
-                </label>
-                <textarea id="interest-reason" name="interest-reason" rows="4" required></textarea>
-            </div>
-
-            <div class="form-group">
-                <label for="desired-location">Plats:</label>
-                <select id="desired-location" name="desired-location" required>
-                    <option value="">Välj plats</option>
-                    <option value="Stockholm">Stockholm</option>
-                    <option value="Göteborg">Göteborg</option>
-                    <option value="Malmö">Malmö</option>
-                    <option value="Lund">Lund</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <div>
-                    <input type="radio" id="pa-plats" name="internship-type" value="pa-plats">
-                    <label for="pa-plats">På plats</label>
-                </div>
-
-                <div>
-                    <input type="radio" id="Distans" name="internship-type" value="Distans">
-                    <label for="Distans">Distans</label>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <input type="submit" value="Skicka" >
-            </div>
-            
         </form>
     </div>
-</body>
-
+  </body>
 </html>
