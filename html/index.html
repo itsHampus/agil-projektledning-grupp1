@@ -3,7 +3,7 @@
 <head>
     <title>Lia-Connection</title>
     <link rel="stylesheet" type="text/css" href="../style.css">
-    <script src="../js/index.js" defer></script>
+    <script src="../js/index.js" type="module"></script>
 </head>
 <body>
     <div class="container">
@@ -12,6 +12,42 @@
             <form action="" class="newCompanyForm">
                 <label for="companyNameInput">Företagsnamn</label>
                 <input name="companyNameInput" type="text" class="companyNameInput" required>
+                <label for="companyPhoneNumberInput">Telefonnummer</label>
+                <input type="number" name="companyPhoneNumberInput" class="companyPhoneNumberInput" required>
+                <label for="companyEmailInput">Mailadress</label>
+                <input type="email" name="companyEmailInput" class="companyEmailInput" required>
+                <label for="companyCityInput">Stad</label>
+                <input type="text" name="companyCityInput" class="companyCityInput" required>
+                <label for="companyBranchSelect">Bransch</label>
+                <select name="companyBranchSelect" class="companyBranchSelect">
+                    <option value="Bygg, anläggning och fastighet">Bygg, anläggning och fastighet</option>
+                    <option value="Data/IT">Data/IT</option>
+                    <option value="Djurvård, lantbruk, skog och trädgård">Djurvård, lantbruk, skog och trädgård</option>
+                    <option value="Ekonomi, administration och försäljning">Ekonomi, administration och försäljning</option>
+                    <option value="Friskvård och kroppsvård">Friskvård och kroppsvård</option>
+                    <option value="Hotell, restaurang och turism">Hotell, restaurang och turism</option>
+                    <option value="Hälso- och sjukvård samt socialt arbete">Hälso- och sjukvård samt socialt arbete</option>
+                    <option value="Journalistik och information">Journalistik och information</option>
+                    <option value="Juridik">Juridik</option>
+                    <option value="Kultur, media och design">Kultur, media och design</option>
+                    <option value="Pedagogiskt arbete">Pedagogiskt arbete</option>
+                    <option value="Säkerhetstjänster">Säkerhetstjänster</option>
+                    <option value="Teknik och tillverkning">Teknik och tillverkning</option>
+                    <option value="Transporttjänster">Transporttjänster</option>
+                    <option value="Övrigt">Övrigt</option>
+                </select>
+
+                <label for="companyPeriodSelect">Bransch</label>
+                <select name="companyPeriodSelect" class="companyPeriodSelect">
+                    <option value="Vt">Vt</option>
+                    <option value="Ht">Ht</option>
+                </select>
+
+                <label for="companySpotsInput">Antal LIA-platser</label>
+                <input type="number" name="companySpotsInput" class="companySpotsInput" required>
+
+                <label for="companyAboutInput">Övrig information om företaget</label>
+                <textarea name="companyAboutInput" class="companyAboutInput" cols="30" rows="10" required></textarea>
                 <button class="addCompanyToListBtn">Lägg till företag</button>
             </form>
         </div>

@@ -1,3 +1,5 @@
+import { createCompanyProfile } from "./firebase.js";
+
 const newCompanyFormContainer = document.querySelector('.newCompanyFormContainer');
 newCompanyFormContainer.style.display = 'none';
 // För att öppna formuläret för att lägga till företag till listan
@@ -12,8 +14,29 @@ closeCompanyFormBtn.addEventListener('click', () => {
     document.querySelector('.newCompanyForm').reset(); //Rensa formuläret
 })
 
-document.querySelector('.newCompanyForm').addEventListener('submit', (event) => {
+
+
+document.querySelector('.newCompanyForm').addEventListener('submit', async (event) => {
     event.preventDefault();
     const companyName = document.querySelector('.companyNameInput').value;
-    console.log(companyName);
+    const companyPhone = document.querySelector('.companyPhoneNumberInput').value;
+    const companyEmail = document.querySelector('.companyEmailInput').value;
+    const companyCity = document.querySelector('.companyCityInput').value;
+    const companyBranch = document.querySelector('.companyBranchSelect').value;
+    const companyPeriod = document.querySelector('.companyPeriodSelect').value;
+    const companySpots = document.querySelector('.companySpotsInput').value;
+    const companyAbout = document.querySelector('.companyAboutInput').value;
+    const newCompanyObject ={
+       companyName: companyName,
+       companyPhone: companyPhone,
+       companyEmail: companyEmail,
+       companyCity: companyCity,
+       companyBranch: companyBranch,
+       companyPeriod: companyPeriod,
+       companySpots: companySpots,
+       companyAbout: companyAbout
+    }
+    await createCompanyProfile(newCompanyObject);
+    document.querySelector('.newCompanyForm').reset(); //Rensa formuläret
+    newCompanyFormContainer.style.display = 'none'; // Stäng formuläret
 })
