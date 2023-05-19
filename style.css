@@ -6,6 +6,10 @@ body {
   overflow-x: hidden;
 }
 
+#homepage-body {
+  min-height: 100vh;
+}
+
 .header {
   background-color: #000000;
   color: #ffffff;
@@ -34,7 +38,6 @@ a:hover #logo {
   text-align: center;
   width: 80%;
   margin: auto;
-  height: 100vh;
   padding-bottom: 60px;
 }
 
@@ -221,17 +224,17 @@ h1 {
 /* Grundläggande styling för footern  */
 
 footer {
-  margin-top: 6rem;
   background-color: #f0f0f0;
   padding: 20px;
   text-align: center;
   width: 100%;
+  position: sticky;
+  top: 100%;
 }
 
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
-  position: relative;
   padding-bottom: 60px;
 }
 

@@ -3,7 +3,7 @@ const form = document.querySelector('.application-form');
 form.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    alert('Vi har tagit emot din ansökan. Tack!');
+    alert('Tack för din ansökan! Vi kommer kontakta dig inom kort.');
 
     setTimeout(() => {
         window.location.href = 'index.html';
