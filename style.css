@@ -6,6 +6,26 @@ body {
   overflow-x: hidden;
 }
 
+
+.header {
+  background-color: #000000;  
+  color: #FFFFFF;  
+  text-align: center;  
+  height: 100px;  
+  width: 100%;  
+}
+
+#logo {
+  height: 100px; 
+  width: auto;  
+}
+
+a:hover #logo {
+  filter: sepia(1) hue-rotate(50deg) saturate(2); 
+  transition: all 0.5s ease; 
+}
+
+
 .homepage-container {
   display: flex;
   flex-direction: column;
