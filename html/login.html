@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login-sida</title>
     <link rel="stylesheet" type="text/css" href="../style.css" />
+    <script src="../js/login.js" type="module"></script>
   </head>
 
   <body id="login-body">
@@ -16,14 +17,15 @@
   </div>
     <h2>Admin</h2>
 
-    <form id="login-form" action="./index.html" method="post">
+    <form id="login-form" >
+      <!-- action="./index.html"> -->
       <label for="username"> Användarnamn:</label>
       <input type="text" id="username" name="username" required />
 
       <label for="password">Lösenord:</label>
       <input type="password" id="password" name="password" required />
 
-      <button onclick="window.location.href='index.html'">Logga in</button>
+      <button>Logga in</button>
     </form>
   </body>
 </html>

@@ -17,3 +17,10 @@ export async function createCompanyProfile(companyObj){
     const data = await response.json();
     return data;
 }
+
+export async function getLoginInfo(){
+    const url = 'https://liaconnect-default-rtdb.europe-west1.firebasedatabase.app/admin.json';
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+}
