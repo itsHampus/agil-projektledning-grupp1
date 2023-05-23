@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>LiaConnect</title>
-    <link rel="stylesheet" type="text/css" href="../style.css">
-    <script src="../js/index.js" type="module"></script>
+  <title>LiaConnect</title>
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <script src="../js/index.js" type="module"></script>
 </head>
+
 <body id="homepage-body">
     <div class="header">
-        <img id="logo" src="/img/headerlogo.jpg" alt="Din logotyp">  
+        <img id="logo" src="/img/headerlogo.jpg" alt="Din logotyp">  <!-- Byt ut 'din_logo_fil.jpg' med din faktiska logo-fil -->
     </div>
     <div class="homepage-container">
         <div class="newCompanyFormContainer">
@@ -40,14 +42,37 @@
                     <option value="Övrigt">Övrigt</option>
                 </select>
 
-                <label for="companyPeriodSelect">Bransch</label>
-                <select name="companyPeriodSelect" class="companyPeriodSelect">
-                    <option value="Vt">Vt</option>
-                    <option value="Ht">Ht</option>
-                </select>
+        <label for="companyPeriodSelect">Vilka månader sträker sig LIA-perioden</label>
+        <div>
+          <label for="months">Januari</label>
+          <input type="checkbox" name="months" value="Januari">
+          <label for="months">Februari</label>
+          <input type="checkbox" name="months" value="Februari">
+          <label for="months">Mars</label>
+          <input type="checkbox" name="months" value="Mars">
+          <label for="months">April</label>
+          <input type="checkbox" name="months" value="April">
+          <label for="months">Maj</label>
+          <input type="checkbox" name="months" value="Maj">
+          <label for="months">Juni</label>
+          <input type="checkbox" name="months" value="Juni">
+          <label for="months">Juli</label>
+          <input type="checkbox" name="months" value="Juli">
+          <label for="months">Augusti</label>
+          <input type="checkbox" name="months" value="Augusti">
+          <label for="months">September</label>
+          <input type="checkbox" name="months" value="September">
+          <label for="months">Oktober</label>
+          <input type="checkbox" name="months" value="Oktober">
+          <label for="months">November</label>
+          <input type="checkbox" name="months" value="November">
+          <label for="months">December</label>
+          <input type="checkbox" name="months" value="December">
+        </div>
 
-                <label for="companySpotsInput">Antal LIA-platser</label>
-                <input type="number" name="companySpotsInput" class="companySpotsInput" required>
+
+        <label for="companySpotsInput">Antal LIA-platser</label>
+        <input type="number" name="companySpotsInput" class="companySpotsInput" required>
 
                 <label for="companyAboutInput">Övrig information om företaget</label>
                 <textarea name="companyAboutInput" class="companyAboutInput" cols="30" rows="10" required></textarea>
@@ -83,44 +108,39 @@
                 <br><br>
                <h3> Hur söker man praktikplats på LiaConnect ?</h3>
                
-                <!-- Identifiera dina intressen och mål: Bestäm vilket område eller bransch du är intresserad
+                Identifiera dina intressen och mål: Bestäm vilket område eller bransch du är intresserad
                 av att göra praktik inom. Fundera över vilka specifika färdigheter och erfarenheter du vill
                 utveckla.
                 Utforska företag och organisationer: Forska om företag och organisationer inom den
                 bransch du är intresserad av. Identifiera företag som erbjuder praktikplatser och som
-                matchar dina intressen och mål. -->
-
-              På LiaConnect gör vi det enkelt att hitta och ansöka till din drömpraktikplats. Vi har samlat olika företag som erbjuder LIA-platser på vår hemsida. Allt du behöver göra är att bläddra igenom listan och välja det företag som du tror bäst matchar dina intressen.
-               När du klickar på ett företag, kommer du till en informativ sida där du får veta mer om dem. Du får bland annat tillgång till deras kontaktuppgifter, var de är belägna, antalet tillgängliga LIA-platser och annan relevant information.
-               När du bestämt dig för ett företag, finns det ett ansökningsformulär du kan fylla i direkt på sidan. I formuläret anger du vilket område du studerar, dina kontaktuppgifter, en kort presentation om dig själv samt om du föredrar att arbeta på distans eller på plats.
-               Efter att du skickat in formuläret, är det bara att vänta på att höra från företaget. De kommer att kontakta dig för att meddela om du har fått praktikplatsen eller inte. Lycka till!
-                
+                matchar dina intressen och mål.
                 </p>
         </div>
         <button class="login" onclick="window.location.href='login.html'">Logga in</button>
         <button id="logoutBtn">Logga ut</button>
     </div>
 
-    <footer>
-        <div class="footer-container">
-          <div class="contact-info">
-            <a href="mailto:admin@yrkeshogskolan.se">admin@yrkeshogskolan.se</a>
-          </div>
-          <div class="legal-links">
-            <a href="">Användarvillkor</a> |
-            <a href="">Sekretesspolicy</a>
-          </div>
-          <div class="about-us">
-            LiaConnect, webbsidan som snabbt och smidigt hjälper dig hitta företag som erbjuder LIA-platser.
-          </div>
-          <div class="useful-links">
-            <a href="https://www.myh.se/yrkeshogskolan/for-arbetslivet/larande-i-arbete-lia"> Information om LIA</a>
-          </div>
-          <div class="copyright">
-            &copy; 2023 LiaConnect. All rights reserved.
-          </div>
-        </div>
-      </footer>
-      
+  <footer>
+    <div class="footer-container">
+      <div class="contact-info">
+        <a href="mailto:admin@yrkeshogskolan.se">admin@yrkeshogskolan.se</a>
+      </div>
+      <div class="legal-links">
+        <a href="">Användarvillkor</a> |
+        <a href="">Sekretesspolicy</a>
+      </div>
+      <div class="about-us">
+        LiaConnect, webbsidan som snabbt och smidigt hjälper dig hitta företag som erbjuder LIA-platser.
+      </div>
+      <div class="useful-links">
+        <a href="https://www.myh.se/yrkeshogskolan/for-arbetslivet/larande-i-arbete-lia"> Information om LIA</a>
+      </div>
+      <div class="copyright">
+        &copy; 2023 LiaConnect. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
 </body>
+
 </html>
