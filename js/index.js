@@ -8,9 +8,7 @@ createCompanyBtn.style.display = 'none';
 const logOutBtn = document.getElementById('logoutBtn');
 logOutBtn.style.display = 'none';
 // localStorage.clear();
-// console.log(createCompanyBtn.style.display);
-const loggedIn = localStorage.getItem('loggedIn');
-if (loggedIn) {
+if (localStorage.getItem('loggedIn')) {
     createCompanyBtn.style.display = 'block';
     logOutBtn.style.display = 'block';
     // För att öppna formuläret för att lägga till företag till listan
@@ -24,8 +22,6 @@ if (loggedIn) {
         document.querySelector('.newCompanyForm').reset(); //Rensa formuläret
     })
 
-
-
     document.querySelector('.newCompanyForm').addEventListener('submit', async (event) => {
         event.preventDefault();
         const companyName = document.querySelector('.companyNameInput').value;
@@ -33,8 +29,29 @@ if (loggedIn) {
         const companyEmail = document.querySelector('.companyEmailInput').value;
         const companyCity = document.querySelector('.companyCityInput').value;
         const companyBranch = document.querySelector('.companyBranchSelect').value;
-        const companyPeriod = document.querySelector('.companyPeriodSelect').value;
+
+        let selectedMonths = [];
+        document.getElementsByName('months').forEach((month) => {
+            if(month.checked){
+                selectedMonths.push(month.value);
+            }
+        })
+        
         const companySpots = document.querySelector('.companySpotsInput').value;
+
+        let liaAtHomeOrAtOffice;
+        document.getElementsByName('inPlaceOrAtDistanceInput').forEach((inPlaceOrAtDistance) => {
+            if(inPlaceOrAtDistance.checked){
+                liaAtHomeOrAtOffice = inPlaceOrAtDistance.value
+            }
+        })
+        let officeAttire;
+        document.getElementsByName('businessCasualOrSuit').forEach((businessCasualOrSuit) => {
+            if(businessCasualOrSuit.checked){
+                officeAttire = businessCasualOrSuit.value;
+            }
+        })
+        const companySlogan = document.querySelector('#companySloganInput').value;
         const companyAbout = document.querySelector('.companyAboutInput').value;
         const newCompanyObject = {
             companyName: companyName,
@@ -42,13 +59,19 @@ if (loggedIn) {
             companyEmail: companyEmail,
             companyCity: companyCity,
             companyBranch: companyBranch,
-            companyPeriod: companyPeriod,
+            companyPeriod: selectedMonths,
             companySpots: companySpots,
+            companyAtHomeOrOffice: liaAtHomeOrAtOffice,
+            companyAttire: officeAttire,
+            companySlogan: companySlogan,
             companyAbout: companyAbout
         }
+        console.log(newCompanyObject);
+        
         await createCompanyProfile(newCompanyObject);
         document.querySelector('.newCompanyForm').reset(); //Rensa formuläret
         newCompanyFormContainer.style.display = 'none'; // Stäng formuläret
+        
     })
 
     logOutBtn.addEventListener('click', () =>{
