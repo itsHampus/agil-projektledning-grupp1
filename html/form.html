@@ -7,7 +7,8 @@
   <body class="form-body">
     <div class="form-container">
       <h1>Vänligen fyll i formuläret:</h1>
-      <form class="application-form">
+      <form class="application-form" onsubmit="return validateForm()">
+
         <div class="form-group">
           <label for="full-name">Fullständigt namn:</label>
           <input type="text" id="full-name" name="full-name" required />
@@ -101,13 +102,7 @@
             >Ange de städer/platser där du skulle kunna tänka dig att
             praktisera:</label
           >
-          <!-- <select id="desired-location" name="desired-location" required>
-            <option value="">Välj plats</option>
-            <option value="Stockholm">Stockholm</option>
-            <option value="Göteborg">Göteborg</option>
-            <option value="Malmö">Malmö</option>
-            <option value="Lund">Lund</option>
-          </select> -->
+         
           <input type="text" />
         </div>
 
