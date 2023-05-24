@@ -7,19 +7,26 @@
     <title>Login-sida</title>
     <script src="../js/adminlogin.js" type="module"></script>
     <link rel="stylesheet" type="text/css" href="../style.css" />
+    <script src="../js/login.js" type="module"></script>
   </head>
 
   <body id="login-body">
+    <div class="header">
+      <a href="index.html">
+      <img id="logo" src="/img/headerlogo.jpg" alt="Din logotyp"> 
+    </a>
+  </div>
     <h2>Admin</h2>
 
     <form id="login-form" >
+      <!-- action="./index.html"> -->
       <label for="username"> Användarnamn:</label>
       <input type="text" id="userName" name="usernName" required />
 
       <label for="password">Lösenord:</label>
       <input type="password" id="password" name="password" required />
 
-      <button id="loginButton" type="submit">Logga in</button>
+      <button>Logga in</button>
     </form>
   </body>
 </html>

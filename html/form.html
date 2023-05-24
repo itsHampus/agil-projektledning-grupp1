@@ -85,8 +85,8 @@
 
         <div class="form-group">
           <label for="interest-reason"
-            >Motivering till varför du är intresserad av den specifika
-            praktikplatsen:
+            >En kort introduktion om dig själv och din syn på hur en trivsam
+            företagskultur ser ut:
           </label>
           <textarea
             id="interest-reason"
@@ -97,14 +97,18 @@
         </div>
 
         <div class="form-group">
-          <label for="desired-location">Plats:</label>
-          <select id="desired-location" name="desired-location" required>
+          <label for="desired-location"
+            >Ange de städer/platser där du skulle kunna tänka dig att
+            praktisera:</label
+          >
+          <!-- <select id="desired-location" name="desired-location" required>
             <option value="">Välj plats</option>
             <option value="Stockholm">Stockholm</option>
             <option value="Göteborg">Göteborg</option>
             <option value="Malmö">Malmö</option>
             <option value="Lund">Lund</option>
-          </select>
+          </select> -->
+          <input type="text" />
         </div>
 
         <div class="form-group">
@@ -125,14 +129,15 @@
               name="internship-type"
               value="Distans"
             />
-            <label for="Distans">Distans</label>
+            <label for="Distans">På distans</label>
           </div>
         </div>
 
-            <div class="form-group">
-                <input type="submit" value="Skicka">
-            </div>
-        </form>
+        <div class="form-group">
+          <input type="submit" value="Skicka" id="skicka" />
+        </div>
+      </form>
     </div>
+    <script src="/js/form.js"></script>
   </body>
 </html>
