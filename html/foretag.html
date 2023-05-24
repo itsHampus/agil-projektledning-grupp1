@@ -3,25 +3,30 @@
   <head>
     <title>Företagsinformation och Kontaktformulär</title>
     <link rel="stylesheet" type="text/css" href="../style.css" />
+    <script src="../js/companyProfile.js" type="module"></script>
   </head>
 
   <body>
     <div class="header">
-        <div class="header">
-            <a href="index.html">
-            <img id="logo" src="/img/headerlogo.jpg" alt="Din logotyp"> 
-          </a>
-        </div>
+      <div class="header">
+        <a href="index.html">
+          <img id="logo" src="/img/headerlogo.jpg" alt="Din logotyp" />
+        </a>
+      </div>
     </div>
-    <div class="foretag">
-      <h1>Företagsnamn: input</h1>
-      <p>Kontaktuppgifter: Telefonnummer, mailadress : input</p>
-      <p>Stad/plats : Kanske select annars input</p>
-      <p>Bransch : kanske select annars input</p>
-      <p>Vilket område de kan ta emot LIA-praktikanter inom : input</p>
-      <p>Perioder : select?</p>
-      <p>Hur många LIA-platser de har att erbjuda : input</p>
-      <p>About : textarea</p>
+
+    <div class="company-profile">
+      <h1 id="company-name"></h1>
+      <h3 id="company-about"></h2>
+        <p><strong> Vår slogan:</strong> <span id="company-slogan"></span></p>
+        <p><strong>Stad:</strong> <span id="company-city"></span></p>
+      <p><strong>Plats/distans:</strong> <span id="remote-or-home"></span></p>
+      <p><strong>Klädkod:</strong> <span id="company-attire"></span></p>
+      <p><strong>Branch:</strong> <span id="business-sector"></span></p>
+      <p><strong>Period som vi kan ta emot praktikanter:</strong> <span id="company-period"></span></p>
+      <p><strong> Antal tillgängliga praktikplatser:</strong> <span id="company-spots"></span></p>
+      <p><strong>Email:</strong> <span id="company-email"></span></p>
+      <p><strong>Tel:</strong> <span id="company-phone"></span></p>
     </div>
 
     <div class="center-container">

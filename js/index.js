@@ -51,8 +51,35 @@ if (loggedIn) {
         newCompanyFormContainer.style.display = 'none'; // Stäng formuläret
     })
 
-    logOutBtn.addEventListener('click', () =>{
+    logOutBtn.addEventListener('click', () => {
         localStorage.removeItem('loggedIn');
         location.reload();
     })
 }
+
+//Läger till företagsnamnen i listan
+
+const ulCompanyList = document.querySelector(".ul-company-list");
+
+async function getCompanyNames() {
+
+    const url = 'https://liaconnect-default-rtdb.europe-west1.firebasedatabase.app/profile.json';
+    const response = await fetch(url);
+    const companyNames = await response.json();
+
+    let names = Object.keys(companyNames);
+
+    for (let i = 0; i < names.length; i++) {
+        let aElement = document.createElement('a');
+        aElement.className = 'companyListLinks';
+        aElement.href = './foretag.html?company=' + encodeURIComponent(names[i]); // Skickar företagsnamnen som en query parameter
+
+        let liElement = document.createElement('li');
+        liElement.className = 'companyListItems';
+        aElement.append(liElement);
+        liElement.append(names[i]);
+        ulCompanyList.append(aElement);
+    }
+};
+
+getCompanyNames();
