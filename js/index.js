@@ -53,6 +53,21 @@ if (localStorage.getItem('loggedIn')) {
                 officeAttire = businessCasualOrSuit.value;
             }
         })
+        
+        let companySize;
+        document.getElementsByName('companySize').forEach((companySizeInput) => {
+            if(companySizeInput.checked){
+                companySize = companySizeInput.value;
+            }
+        });
+    
+        let workMode;
+        document.getElementsByName('workMode').forEach((workModeInput) => {
+            if(workModeInput.checked){
+                workMode = workModeInput.value;
+            }
+        });
+
         const companySlogan = document.querySelector('#companySloganInput').value;
         const companyAbout = document.querySelector('.companyAboutInput').value;
         const newCompanyObject = {
