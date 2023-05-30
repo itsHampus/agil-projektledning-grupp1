@@ -24,3 +24,15 @@ export async function getLoginInfo() {
     const data = await response.json();
     return data;
 }
+
+export async function deleteCompany(companyName){
+    const url = `https://liaconnect-default-rtdb.europe-west1.firebasedatabase.app/profile/${companyName}.json`;
+    const init ={
+        method: 'DELETE',
+        headers:{
+            'Content-type': 'application/json: charset=UTF-8'
+        }
+    }
+    const response = await fetch(url, init);
+    
+}

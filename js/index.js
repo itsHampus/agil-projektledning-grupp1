@@ -1,4 +1,5 @@
 import { createCompanyProfile } from "./firebase.js";
+import { deleteCompany } from "./firebase.js";
 
 const newCompanyFormContainer = document.querySelector('.newCompanyFormContainer');
 newCompanyFormContainer.style.display = 'none';
@@ -10,6 +11,7 @@ logOutBtn.style.display = 'none';
 // localStorage.clear();
 if (localStorage.getItem('loggedIn')) {
     createCompanyBtn.style.display = 'block';
+    document.querySelector('.login').style.display = 'none';
     logOutBtn.style.display = 'block';
     // För att öppna formuläret för att lägga till företag till listan
     createCompanyBtn.addEventListener('click', () => {
@@ -66,12 +68,11 @@ if (localStorage.getItem('loggedIn')) {
             companySlogan: companySlogan,
             companyAbout: companyAbout
         }
-        console.log(newCompanyObject);
         
         await createCompanyProfile(newCompanyObject);
         document.querySelector('.newCompanyForm').reset(); //Rensa formuläret
         newCompanyFormContainer.style.display = 'none'; // Stäng formuläret
-        
+        getCompanyNames();
     })
 
     logOutBtn.addEventListener('click', () => {
@@ -85,11 +86,10 @@ if (localStorage.getItem('loggedIn')) {
 const ulCompanyList = document.querySelector(".ul-company-list");
 
 async function getCompanyNames() {
-
+    ulCompanyList.innerHTML = '';
     const url = 'https://liaconnect-default-rtdb.europe-west1.firebasedatabase.app/profile.json';
     const response = await fetch(url);
     const companyNames = await response.json();
-
     let names = Object.keys(companyNames);
 
     for (let i = 0; i < names.length; i++) {
@@ -101,7 +101,24 @@ async function getCompanyNames() {
         liElement.className = 'companyListItems';
         aElement.append(liElement);
         liElement.append(names[i]);
-        ulCompanyList.append(aElement);
+
+        if(localStorage.getItem('loggedIn')){
+            const deleteCompanyBtn = document.createElement('button');
+            deleteCompanyBtn.innerText = 'Ta bort företag';
+            deleteCompanyBtn.addEventListener('click', async ()=>{
+                let confirmedChoise = confirm('Är du säker att du vill ta bort företaget?');
+                if(confirmedChoise){
+                    await deleteCompany(names[i]);
+                    location.reload();
+                }
+            })
+    
+            const containerForTheCompany = document.createElement('div');
+            containerForTheCompany.append(aElement, deleteCompanyBtn);
+            ulCompanyList.append(containerForTheCompany);
+        }else{
+            ulCompanyList.append(aElement);
+        }
     }
 };
 

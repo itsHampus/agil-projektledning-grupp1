@@ -3,7 +3,6 @@ async function getCompanyData() {
     // Hämtar företagsnamnet från query-parametern
     const urlParams = new URLSearchParams(window.location.search);
     const companyName = urlParams.get('company');
-
     if (companyName) {
         const url = 'https://liaconnect-default-rtdb.europe-west1.firebasedatabase.app/profile.json';
         const response = await fetch(url);
