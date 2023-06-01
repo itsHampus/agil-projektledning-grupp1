@@ -23,4 +23,17 @@ Det finns totalt tre stycken mappar, en innehållandes alla HTML-filer, den andr
 4. companyProfile.js innehåller funktionaliteten för företagssidan
 5. firebase.js innehåller funktionaliteten för lagring av företag på firebase
 
+### Förklaring av funktionaliteten
+** index.js
+Listan på startsidan innehållandes alla företag hämtas från lagringen på firebase, detta görs via funktionen getCompanyNames. Den hämtar alla företagsobjekt och med hjälp av metoden keys från klassen Object får vi ut endast namnen på företagen och de lägger vi i en array kallad names. Sedan loopar vi igenom names-arrayen med en for-loop och i varje loop läggs företagsnamnet i ett li-element som sedan läggs i ett a-element. I loopen finns det en if-sats som kollar om användaren är inloggad eller inte. Är användaren inte inloggad visas företagsnamnen som vanligt men om användaren är inloggad läggs det till en knapp på varje företagsnamn som gör det möjligt för administatören att ta bort företaget från listan och från firebase. Detta görs med metoden deleteCompany som importeras från filen firebase.js.
 
+Om administratören har loggat in så visas en knapp ovanför listan med företagen som gör det möjligt att lägga till nya företag i listan. När knappen trycks på visas formuläret för att skapa nya företag. När formuläret är ifyllt och det har blivit submitted hämtas all information från formuläret och läggs till i ett objekt kallat newCompanyObject. Det objektet läggs sedan till i firebase med hjälp av funktionen createCompanyProfile som är importerad från firebase.js. Efter objektet har lagts till i firebase så rensas och stängs formuläret sedan uppdateras listan med alla företag med hjälp av funktionen getCompanyNames.
+
+## firebase.js
+Det finns totalt tre stycken funktioner som exporteras och används i andra filer. 
+
+Funktionen createCompanyProfile har en parameter kallad companyObj. Till en början vill vi göra om företagsnamnet till en slug så att vi kan lägga till det i urlen till databasen i firebase. Sedan görs objektet till JSON för att sedan lägga till det i databasen med metoden PUT då vi redan har ett id för objektet som är slugen.
+
+Funktionen getLoginInfo hämtar inloggninsobjektet från firebase innehållandes inloggningsuppgifterna, dessa returneras så att man kan kontrollera att användaren har angett rätt inloggningsuppgifter.
+
+Funktionen deleteCompany har en parameter kallad companyName som används i urlen för att hitta företaget som man vill ta bort ifrån databasen i firebase. Objektet tas bort med hjälp av metoden DELETE. 
